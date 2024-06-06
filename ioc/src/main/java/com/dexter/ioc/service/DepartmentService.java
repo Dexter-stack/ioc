@@ -1,7 +1,6 @@
 package com.dexter.ioc.service;
 
 import com.dexter.ioc.entity.Department;
-import com.dexter.ioc.error.DepartmentBadRequestException;
 import com.dexter.ioc.error.DepartmentNotFoundExeception;
 
 import java.util.List;

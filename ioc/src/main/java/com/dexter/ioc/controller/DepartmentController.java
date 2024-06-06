@@ -2,7 +2,6 @@ package com.dexter.ioc.controller;
 
 import com.dexter.ioc.entity.Department;
 import com.dexter.ioc.error.DepartmentNotFoundExeception;
-import com.dexter.ioc.service.DepartmentImpl;
 import com.dexter.ioc.service.DepartmentService;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
@@ -14,6 +13,7 @@ import java.util.List;
 
 @RestController
 public class DepartmentController {
+
     @Autowired
     private DepartmentService departmentService;
 
