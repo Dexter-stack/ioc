@@ -1,4 +1,15 @@
+server:
+  port: '8082'
+
 spring:
+  profiles:
+    active: qa
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
   datasource:
     driver-class-name: org.postgresql.Driver
     username: postgres
@@ -15,5 +26,47 @@ spring:
       ddl-auto: update
 welcome:
   message: Welcome to Dexter Code!!!
-server:
-  port: '8082'
+---
+
+spring:
+  config:
+    activate:
+      on-profile: qa
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/dp_app_qa
+    password: dexter
+  application:
+    name: ioc
+  mvc:
+    problem-details:
+      enabled: 'true'
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+welcome:
+  message: Welcome to Dexter Code!!!
+---
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/dp_app_prod
+    password: dexter
+  application:
+    name: ioc
+  mvc:
+    problem-details:
+      enabled: 'true'
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+welcome:
+  message: Welcome to Dexter Code!!!
