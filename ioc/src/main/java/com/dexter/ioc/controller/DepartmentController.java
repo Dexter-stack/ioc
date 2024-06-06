@@ -1,6 +1,7 @@
 package com.dexter.ioc.controller;
 
 import com.dexter.ioc.entity.Department;
+import com.dexter.ioc.error.DepartmentNotFoundExeception;
 import com.dexter.ioc.service.DepartmentImpl;
 import com.dexter.ioc.service.DepartmentService;
 import jakarta.validation.Valid;
@@ -34,7 +35,7 @@ public class DepartmentController {
     }
 
     @GetMapping("/departments/{id}")
-    public Department fetchDepartmentById(@PathVariable("id") Long departmentId){
+    public Department fetchDepartmentById(@PathVariable("id") Long departmentId) throws DepartmentNotFoundExeception {
         return  departmentService.fetchDepartmentById(departmentId);
     }
 

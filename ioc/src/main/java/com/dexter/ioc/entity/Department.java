@@ -23,7 +23,8 @@ public class Department {
     @GeneratedValue(strategy = GenerationType.AUTO)  // to create primary key
     private Long departmentId;
 
-    @NotBlank(message = "please Add Department  name")
+    @NotNull(message = "Name cannot be null")
+    @Length(max = 6, min=4)
 //    @Length(max = 5, min = 1)
 //    @Size(max = 10, min = 0)
 //    @Email
@@ -32,6 +33,7 @@ public class Department {
 //    @FutureOrPresent
     //validations annotations
     private String departmentName;
+    @NotNull(message = "Address should not be blank")
     private String departmentAddress;
     private String departmentCode;
 
